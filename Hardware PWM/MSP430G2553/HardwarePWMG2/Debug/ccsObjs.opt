@@ -1,0 +1,1 @@
+"./ButtonSetup.obj" "./DutyCycleSetup.obj" "./LEDsetup.obj" "./TimerA0Setup.obj" "./TimerA1Setup.obj" "./conversion.obj" "./main.obj" "../lnk_msp430g2553.cmd" -llibc.a 
