@@ -11,7 +11,7 @@
 
 void ButtonSetup(void)
 {
-    BTN_INT_EN |=  BUTTON;                  // P1._ (Switch2) interrupt enabled
-    BTN_INT_EDGE |= BUTTON;                 // P1._ set to high/low edge
-    CLRFLG &= ~BUTTON;                      // P1._ IFG (interrupt flag) cleared
+    BTN_INT_EN |=  BUTTON;                  // P1.3 (Switch2) interrupt enabled
+    BTN_INT_EDGE |= BUTTON;                 // P1.3 set to high/low edge
+    CLRFLG &= ~BUTTON;                      // P1.3 IFG (interrupt flag) cleared
 }

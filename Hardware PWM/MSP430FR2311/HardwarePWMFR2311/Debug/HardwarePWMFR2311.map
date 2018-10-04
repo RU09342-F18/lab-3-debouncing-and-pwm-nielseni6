@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Wed Oct  3 13:30:06 2018
+>> Linked Thu Oct  4 19:17:13 2018
 
 OUTPUT FILE NAME:   <HardwarePWMFR2311.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000f1a6
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000f1a4
 
 
 MEMORY CONFIGURATION
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
   BSL0                  00001000   00000800  00000000  00000800  RWIX
   RAM                   00002000   00000400  000000a0  00000360  RWIX
-  FRAM                  0000f100   00000e80  000000d0  00000db0  RWIX
+  FRAM                  0000f100   00000e80  000000ce  00000db2  RWIX
   JTAGSIGNATURE         0000ff80   00000004  00000004  00000000  RWIX  ffff 
   BSLSIGNATURE          0000ff84   00000004  00000004  00000000  RWIX  ffff 
   INT00                 0000ff88   00000002  00000000  00000002  RWIX
@@ -104,21 +104,21 @@ section   page    origin      length       input sections
 
 .const     0    0000f100    00000000     UNINITIALIZED
 
-.text      0    0000f100    00000084     
+.text      0    0000f100    00000082     
                   0000f100    00000024     main.obj (.text:main)
                   0000f124    0000001a     ButtonSetup.obj (.text:ButtonSetup)
-                  0000f13e    0000001a     DutyCycleSetup.obj (.text:DutyCycleSetup)
-                  0000f158    00000014     TimerA0Setup.obj (.text:TimerA0Setup)
-                  0000f16c    0000000e     LEDsetup.obj (.text:LEDsetup)
-                  0000f17a    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
-                  0000f180    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  0000f13e    00000018     DutyCycleSetup.obj (.text:DutyCycleSetup)
+                  0000f156    00000014     TimerB0Setup.obj (.text:TimerB0Setup)
+                  0000f16a    0000000e     LEDsetup.obj (.text:LEDsetup)
+                  0000f178    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
+                  0000f17e    00000004                            : pre_init.c.obj (.text:_system_pre_init)
 
 .text:_isr 
-*          0    0000f184    0000004c     
-                  0000f184    00000022     main.obj (.text:_isr:Port_1)
-                  0000f1a6    00000014     rts430x_lc_sd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
-                  0000f1ba    0000000e     main.obj (.text:_isr:Timer_B)
-                  0000f1c8    00000008     rts430x_lc_sd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+*          0    0000f182    0000004c     
+                  0000f182    00000022     main.obj (.text:_isr:Port_1)
+                  0000f1a4    00000014     rts430x_lc_sd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
+                  0000f1b8    0000000e     main.obj (.text:_isr:Timer_B)
+                  0000f1c6    00000008     rts430x_lc_sd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
 .stack     0    00002360    000000a0     UNINITIALIZED
                   00002360    00000002     rts430x_lc_sd_eabi.lib : boot.c.obj (.stack)
@@ -186,11 +186,11 @@ MODULE SUMMARY
     .\
        main.obj             84     4         0      
        ButtonSetup.obj      26     0         0      
-       DutyCycleSetup.obj   26     0         0      
-       TimerA0Setup.obj     20     0         0      
+       DutyCycleSetup.obj   24     0         0      
+       TimerB0Setup.obj     20     0         0      
        LEDsetup.obj         14     0         0      
     +--+--------------------+------+---------+---------+
-       Total:               170    4         0      
+       Total:               168    4         0      
                                                     
     C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.2.LTS\lib\rts430x_lc_sd_eabi.lib
        boot.c.obj           20     2         0      
@@ -214,7 +214,7 @@ MODULE SUMMARY
                                                     
        Stack:               0      0         160    
     +--+--------------------+------+---------+---------+
-       Grand Total:         208    30        160    
+       Grand Total:         206    30        160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -300,7 +300,7 @@ address   name
 00000673  BAKMEM9_H             
 00000672  BAKMEM9_L             
 0000f124  ButtonSetup           
-0000f17a  C$$EXIT               
+0000f178  C$$EXIT               
 000002ee  CAPTIOCTL             
 000002ef  CAPTIOCTL_H           
 000002ee  CAPTIOCTL_L           
@@ -371,7 +371,7 @@ address   name
 000001a6  GCCTL1                
 000001a7  GCCTL1_H              
 000001a6  GCCTL1_L              
-0000f16c  LEDsetup              
+0000f16a  LEDsetup              
 00000204  P1DIR                 
 0000021a  P1IE                  
 00000218  P1IES                 
@@ -461,7 +461,7 @@ address   name
 0000012a  PMMIFG                
 0000012b  PMMIFG_H              
 0000012a  PMMIFG_L              
-0000f184  Port_1                
+0000f182  Port_1                
 0000030c  RTCCNT                
 0000030d  RTCCNT_H              
 0000030c  RTCCNT_L              
@@ -588,8 +588,8 @@ address   name
 00000f00  TRI0CTL               
 00000f01  TRI0CTL_H             
 00000f00  TRI0CTL_L             
-0000f158  TimerA0Setup          
-0000f1ba  Timer_B               
+0000f156  TimerB0Setup          
+0000f1b8  Timer_B               
 00000510  UCA0ABCTL             
 00000511  UCA0ABCTL_H           
 00000510  UCA0ABCTL_L           
@@ -682,7 +682,7 @@ address   name
 000001cc  WDTCTL_L              
 00002400  __STACK_END           
 000000a0  __STACK_SIZE          
-0000f1c8  __TI_ISR_TRAP         
+0000f1c6  __TI_ISR_TRAP         
 0000ffe2  __TI_int45            
 0000ffe4  __TI_int46            
 0000ffe6  __TI_int47            
@@ -701,11 +701,11 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
-0000f1a6  _c_int00_noinit_noargs
+0000f1a4  _c_int00_noinit_noargs
 0000fffe  _reset_vector         
 00002360  _stack                
-0000f180  _system_pre_init      
-0000f17a  abort                 
+0000f17e  _system_pre_init      
+0000f178  abort                 
 0000f100  main                  
 
 
@@ -1171,15 +1171,15 @@ address   name
 0000f100  main                  
 0000f124  ButtonSetup           
 0000f13e  DutyCycleSetup        
-0000f158  TimerA0Setup          
-0000f16c  LEDsetup              
-0000f17a  C$$EXIT               
-0000f17a  abort                 
-0000f180  _system_pre_init      
-0000f184  Port_1                
-0000f1a6  _c_int00_noinit_noargs
-0000f1ba  Timer_B               
-0000f1c8  __TI_ISR_TRAP         
+0000f156  TimerB0Setup          
+0000f16a  LEDsetup              
+0000f178  C$$EXIT               
+0000f178  abort                 
+0000f17e  _system_pre_init      
+0000f182  Port_1                
+0000f1a4  _c_int00_noinit_noargs
+0000f1b8  Timer_B               
+0000f1c6  __TI_ISR_TRAP         
 0000ffe2  __TI_int45            
 0000ffe4  __TI_int46            
 0000ffe6  __TI_int47            

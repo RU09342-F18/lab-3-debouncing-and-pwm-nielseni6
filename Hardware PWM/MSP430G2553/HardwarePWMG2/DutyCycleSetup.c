@@ -8,10 +8,11 @@
 
 void DutyCycleSetup(void){
 
+    TA0CCTL0 = CCIE;                            // TA0CCR0 interrupt enabled
     TA0CCR0 = 1000;                             // PWM Period
-      TA0CCTL1 = OUTMOD_7;                         // CCR1 reset/set
-      TA0CCR1 = 0;                                 // CCR1 PWM duty cycle
-      TA0CTL = TASSEL_2 + MC_1 + ID_1;           // SMCLK, up mode
+    TA0CCTL1 = OUTMOD_7;                        // CCR1 reset/set
+    TA0CCR1 = 0;                                // CCR1 PWM duty cycle
+    TA0CTL = TASSEL_2 + MC_1 + ID_1;            // SMCLK, up mode
 }
 
 

@@ -12,48 +12,48 @@ C_SRCS += \
 ../ButtonSetup.c \
 ../DutyCycleSetup.c \
 ../LEDsetup.c \
-../TimerA0Setup.c \
 ../TimerA1Setup.c \
+../TimerB0Setup.c \
 ../main.c 
 
 C_DEPS += \
 ./ButtonSetup.d \
 ./DutyCycleSetup.d \
 ./LEDsetup.d \
-./TimerA0Setup.d \
 ./TimerA1Setup.d \
+./TimerB0Setup.d \
 ./main.d 
 
 OBJS += \
 ./ButtonSetup.obj \
 ./DutyCycleSetup.obj \
 ./LEDsetup.obj \
-./TimerA0Setup.obj \
 ./TimerA1Setup.obj \
+./TimerB0Setup.obj \
 ./main.obj 
 
 OBJS__QUOTED += \
 "ButtonSetup.obj" \
 "DutyCycleSetup.obj" \
 "LEDsetup.obj" \
-"TimerA0Setup.obj" \
 "TimerA1Setup.obj" \
+"TimerB0Setup.obj" \
 "main.obj" 
 
 C_DEPS__QUOTED += \
 "ButtonSetup.d" \
 "DutyCycleSetup.d" \
 "LEDsetup.d" \
-"TimerA0Setup.d" \
 "TimerA1Setup.d" \
+"TimerB0Setup.d" \
 "main.d" 
 
 C_SRCS__QUOTED += \
 "../ButtonSetup.c" \
 "../DutyCycleSetup.c" \
 "../LEDsetup.c" \
-"../TimerA0Setup.c" \
 "../TimerA1Setup.c" \
+"../TimerB0Setup.c" \
 "../main.c" 
 
 

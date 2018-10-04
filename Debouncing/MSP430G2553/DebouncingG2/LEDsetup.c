@@ -12,5 +12,5 @@
 void LEDsetup(void)
 {
   LED_DIR |= LED0;                        // Set P1.0 to output
-  LED_OUT &= ~LED0;                         // P1._ green LED set to off
+  LED_OUT &= ~LED0;                       // P1.0 green LED set to off
 }
