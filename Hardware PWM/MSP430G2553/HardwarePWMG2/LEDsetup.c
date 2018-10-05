@@ -14,7 +14,7 @@
 
 void LEDsetup(void)
 {
-    LED_DIR |= LED1;                            // P1.6 output
+    LED_DIR |= LED1 + LED0;                            // P1.6 output
     LED_SEL |= LED1;                            // P1.6 for TA0.1 output
     LED_SEL2 &= ~LED1;                          // Select default function for P1.6
 }

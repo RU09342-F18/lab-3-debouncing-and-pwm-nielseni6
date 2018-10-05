@@ -16,6 +16,7 @@ void TimerA0Setup();
 int main(void)
 {
     WDTCTL = WDTPW + WDTHOLD;               // Stop watchdog timer
+    BCSCTL3 = LFXT1S_2;                     // Makes ACKL use internal oscillator
     LEDsetup();                             // Sets up LED output
     ButtonSetup();                          // Sets up button input & interrupts
     TimerA0Setup();                         // Sets up TimerA0 & interrupts

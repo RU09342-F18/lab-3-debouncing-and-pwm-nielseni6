@@ -2,5 +2,5 @@
 
 void TimerA1Setup(){
     TA1CCTL0 = CCIE; // CCR0 interrupt enabled
-    TA1CCR0 = 18000; //resets timer at 10000 cycles
+    TA1CCR0 = 2200; //resets timer at 10000 cycles
 }
