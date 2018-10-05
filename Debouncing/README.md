@@ -12,3 +12,7 @@ LED toggles when button is pressed. The button doesn't bounce on button press or
 ## Explination
 
 This program uses Timer0 as an interrupt. The first thing this program does is set up LEDs, buttons and timers. When the button is pressed the LED is toggled, the button interrupt is disabled, Timer0 is started and the button flag is cleared. The program is now waiting for the Timer0 to hit CCR0, at which point the button interrupt is enabled again and the clock is reset and disabled. The effect of this is that the button will not be detected within a short amount of time after it is pressed.
+
+## Difference Between Boards
+
+The only difference in the code for these two boards is the pins used for the button and the pins used for the LED, which can be found in the define statements at the top of the code.
